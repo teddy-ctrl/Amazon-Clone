@@ -1,9 +1,14 @@
 import React from "react";
-import banner from "../../assets/images/hero/banner1.jpg";
-// import Headset from "../../assets/image/items/Headset.jpg";
-// import Keyboards from "../../assets/image/items/Keyboard.jpg";
-// import Mouse from "../../assets/image/items/Mouse.jpg";
-// import Chair from "../../assets/image/items/Chair.jpg";
+import {Carousel} from 'react-responsive-carousel'
+import {img} from './data'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
+
+import Headset from '../../assets/images/items/Headset.jpg'
+import Chair from '../../assets/images/items/Chair.jpg'
+import Keyboards from '../../assets/images/items/Keyboard.jpg'
+import Mouse from '../../assets/images/items/Mouse.jpg'
+
 
 import "./menuBanner.css";
 // import ProductDetails from "../ProductDetails/ProductDetails";
@@ -11,121 +16,132 @@ import "./menuBanner.css";
 const MenuBanner = () => {
   return (
     <>
-      <div className="homeBanner">
-        <img className="homeBannerImg" src={banner} alt="" />
+        <Carousel className="homeBanner" autoPlay={true}
+        infiniteLoop = {true}
+        showIndicators = {false}
+        showThumbs = {false}>
+            
+{
+    img.map((imageItem) => {
+        return <img className="homeBannerImg" src={imageItem} />
+    })
+}
+        </Carousel>
+      {/* <div className="homeBannerImg"></div> */}
 
-        <div className="homeRow">
-          {/* <ProductDetails /> */}
+       <div className="homeProduct">
+          <div className="itemCard">
+            <div className="itemCardTitle">Title</div>
+            <div className="itemImage">
+              <div className="imgList">
+                <img className="imgBanner" src={Headset} alt="" />
+                <div className="imageName">Headsets</div>
+              </div>
+
+              <div className="imgList">
+                <img className="imgBanner" src={Keyboards} alt="" />
+                <div className="imageName">Keyboards</div>
+              </div>
+
+              <div className="imgList">
+                <img className="imgBanner" src={Mouse} alt="" />
+                <div className="imageName">Computer mice</div>
+              </div>
+
+              <div className="imgList">
+                <img className="imgBanner" src={Chair} alt="" />
+                <div className="imageName">Chairs</div>
+              </div>
+            </div>
+            <div className="seeMore">See More</div>
+          </div>
+
+          <div className="itemCard">
+            <div className="itemCardTitle">Title</div>
+            <div className="itemImage">
+              <div className="imgList">
+                <img className="imgBanner" src={Headset} alt="" />
+                <div className="imageName">Headsets</div>
+              </div>
+
+              <div className="imgList">
+                <img className="imgBanner" src={Keyboards} alt="" />
+                <div className="imageName">Keyboards</div>
+              </div>
+
+              <div className="imgList">
+                <img className="imgBanner" src={Mouse} alt="" />
+                <div className="imageName">Computer mice</div>
+              </div>
+
+              <div className="imgList">
+                <img className="imgBanner" src={Chair} alt="" />
+                <div className="imageName">Chairs</div>
+              </div>
+            </div>
+            <div className="seeMore">See More</div>
+          </div>
+
+          <div className="itemCard">
+            <div className="itemCardTitle">Title</div>
+            <div className="itemImage">
+              <div className="imgList">
+                <img className="imgBanner" src={Headset} alt="" />
+                <div className="imageName">Headsets</div>
+              </div>
+
+              <div className="imgList">
+                <img className="imgBanner" src={Keyboards} alt="" />
+                <div className="imageName">Keyboards</div>
+              </div>
+
+              <div className="imgList">
+                <img className="imgBanner" src={Mouse} alt="" />
+                <div className="imageName">Computer mice</div>
+              </div>
+
+              <div className="imgList">
+                <img className="imgBanner" src={Chair} alt="" />
+                <div className="imageName">Chairs</div>
+              </div>
+            </div>
+            <div className="seeMore">See More</div>
+          </div>
+
+          <div className="itemCard">
+            <div className="itemCardTitle">Title</div>
+            <div className="itemImage">
+              <div className="imgList">
+                <img className="imgBanner" src={Headset} alt="" />
+                <div className="imageName">Headsets</div>
+              </div>
+
+              <div className="imgList">
+                <img className="imgBanner" src={Keyboards} alt="" />
+                <div className="imageName">Keyboards</div>
+              </div>
+
+              <div className="imgList">
+                <img className="imgBanner" src={Mouse} alt="" />
+                <div className="imageName">Computer mice</div>
+              </div>
+
+              <div className="imgList">
+                <img className="imgBanner" src={Chair} alt="" />
+                <div className="imageName">Chairs</div>
+              </div>
+            </div>
+            <div className="seeMore">See More</div>
+          </div>
         </div>
 
-        {/* <div className="homeProduct">
-          <div className="itemCard">
-            <div className="itemCardTitle">Title</div>
-            <div className="itemImage">
-              <div className="imgList">
-                <img className="imgBanner" src={Headset} alt="" />
-                <div className="imageName">Headsets</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Keyboards} alt="" />
-                <div className="imageName">Keyboards</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Mouse} alt="" />
-                <div className="imageName">Computer mice</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Chair} alt="" />
-                <div className="imageName">Chairs</div>
-              </div>
-            </div>
-            <div className="seeMore">See More</div>
-          </div>
-
-          <div className="itemCard">
-            <div className="itemCardTitle">Title</div>
-            <div className="itemImage">
-              <div className="imgList">
-                <img className="imgBanner" src={Headset} alt="" />
-                <div className="imageName">Headsets</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Keyboards} alt="" />
-                <div className="imageName">Keyboards</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Mouse} alt="" />
-                <div className="imageName">Computer mice</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Chair} alt="" />
-                <div className="imageName">Chairs</div>
-              </div>
-            </div>
-            <div className="seeMore">See More</div>
-          </div>
-
-          <div className="itemCard">
-            <div className="itemCardTitle">Title</div>
-            <div className="itemImage">
-              <div className="imgList">
-                <img className="imgBanner" src={Headset} alt="" />
-                <div className="imageName">Headsets</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Keyboards} alt="" />
-                <div className="imageName">Keyboards</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Mouse} alt="" />
-                <div className="imageName">Computer mice</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Chair} alt="" />
-                <div className="imageName">Chairs</div>
-              </div>
-            </div>
-            <div className="seeMore">See More</div>
-          </div>
-
-          <div className="itemCard">
-            <div className="itemCardTitle">Title</div>
-            <div className="itemImage">
-              <div className="imgList">
-                <img className="imgBanner" src={Headset} alt="" />
-                <div className="imageName">Headsets</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Keyboards} alt="" />
-                <div className="imageName">Keyboards</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Mouse} alt="" />
-                <div className="imageName">Computer mice</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Chair} alt="" />
-                <div className="imageName">Chairs</div>
-              </div>
-            </div>
-            <div className="seeMore">See More</div>
-          </div>
-        </div> */}
-      </div>
     </>
   );
 };
 
 export default MenuBanner;
+
+
+
+
+

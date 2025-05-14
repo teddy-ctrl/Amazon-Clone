@@ -3,19 +3,195 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1500px;
+    width: 80%;  
+    /* background-color: #fff !important; */
 }
 
 .homeBannerImg {
     z-index: -1;
-    margin-bottom: -150px;
+    margin-bottom: -10px;
     width: 100%;
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    height: 100%;
+}
+ /* .homeBanner {
+      position: relative;
+ }
+.homeBanner::before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(
+        to bottom, 
+        rgba(225, 225,2 25,0),
+        rgba(255, 255, 255)
+    );
+} */
+
+
+
+
+
+
+
+
+/* ---------------------------------------------- */
+.homeProduct {
+    display: grid;
+    grid-template-columns: auto auto auto auto; /* Unchanged */
+    gap: 20px;
+    top: 55%;
+    padding: 0 20px;
+    position: absolute;
+    width: 70%; /* Responsive width */
+    max-width: 1200px; /* Cap width for large screens */
+    left: 43%; /* Move left edge to center */
+    transform: translateX(-50%); /* Shift left by half the width */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
-.homeRow{
+.itemCard {
     display: flex;
-    z-index: 1;
-    margin-left: 5px;
-    margin-right: 5px;
+    background-color: white;
+    flex-direction: column;
+    width: 343px;
+    box-sizing: border-box;
+    padding: 20px 0 15px;
+}
+
+.itemCardTitle {
+    margin: 0 20px;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.itemImage {
+    margin: 10px 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.imgList {
+    height: 144px;
+    width: 144px;
+    display: flex;
+    flex-direction: column;
+}
+
+.imgBanner{
+    width: 100%;
+}
+
+.imageName {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.seeMore {
+    margin: 0 20px;
+    font-size: 13px;
+    color: #007185;
+
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .homeBanner {
+    width: 90%; /* Slightly wider on medium screens */
+  }
+
+  .homeProduct {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller min width for tablets */
+    padding: 15px;
+  }
+
+  .itemCard {
+    max-width: 300px; /* Slightly smaller cards */
+  }
+
+  .itemCardTitle {
+    font-size: 18px; /* Smaller title font */
+  }
+}
+
+@media (max-width: 768px) {
+  .homeBanner {
+    width: 95%; /* Almost full width on small screens */
+  }
+
+  .homeProduct {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Even smaller columns */
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .itemCard {
+    padding: 15px 10px;
+  }
+
+  .itemImage {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for images */
+    margin: 10px 15px;
+  }
+
+  .imgList {
+    max-width: 120px; /* Smaller images */
+  }
+
+  .imgBanner {
+    max-height: 100px; /* Smaller image height */
+  }
+
+  .itemCardTitle {
+    font-size: 16px;
+  }
+
+  .seeMore {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .homeBanner {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .homeProduct {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .itemCard {
+    max-width: 100%; /* Full width cards */
+    padding: 10px;
+  }
+
+  .itemImage {
+    grid-template-columns: 1fr 1fr; /* Two images per row */
+    margin: 5px 10px;
+  }
+
+  .imgList {
+    max-width: 100px; /* Smaller images */
+  }
+
+  .imgBanner {
+    max-height: 80px; /* Smaller images for mobile */
+  }
+
+  .itemCardTitle {
+    font-size: 14px;
+  }
+
+  .imageName {
+    font-size: 10px;
+  }
+
+  .seeMore {
+    font-size: 11px;
+  }
 }
