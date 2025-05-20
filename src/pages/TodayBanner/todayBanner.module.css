@@ -1,0 +1,207 @@
+/* Original Styles - with corrections and minor adjustments */
+.todaywrapper {
+      padding-top: 650px; /* Base for large screens */
+    background-color: #e6e6e6; /* Added a light background to see its extent if needed */
+}
+
+.todayBanner {
+    width: 77%; /* Base width */
+    max-width: 1500px; /* Cap the width on very large screens */
+    padding: 20px;
+    gap: 20px; /* This gap is for flex items *directly* inside .todayBanner, but it only has .todayCard */
+    display: flex; /* Not strictly necessary if it only contains .todayCard which is width 100% */
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    margin: 0 auto; /* Center the banner */
+    border-radius: 4px; /* Optional: slight rounding */
+}
+
+.todayCard {
+    width: 100%;
+    box-sizing: border-box;
+    /* padding: 15px;  Padding will be applied by .todayBanner, or add specific padding if needed */
+}
+
+.todayTitle {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 15px; /* Add some space below the title */
+    padding-left: 10px; /* Align with items if they have padding */
+}
+
+.todayItems {
+    display: flex; /* This container is for the scrollable area */
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* Crucial: clips the .todayScroll to prevent its scrollbar from affecting layout outside */
+}
+
+.todayScroll {
+    display: flex;
+    width: 100%; /* Take full width of .todayItems */
+    gap: 15px; /* Space between individual deal items */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px 5px; /* Add some padding for items, especially for scrollbar visibility */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #cccccc #f0f0f0; /* For Firefox */
+}
+
+
+
+.todayDetailItems {
+    display: flex;
+    flex-shrink: 0; /* Prevent items from shrinking below their basis/width */
+    flex-direction: column;
+    flex-basis: 17%; /* Use flex-basis for better control in flex container */
+    min-width: 120px; /* Ensure items don't get too small even with percentage basis */
+    align-items: center;
+    justify-content: center; /* If you want content vertically centered */
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 3px; /* Optional */
+    text-align: center; /* For any text content added later */
+}
+
+.todayItemsImg {
+    width: 80%; /* Increase size within the card */
+    max-width: 150px; /* Prevent image from becoming overly large if item card grows */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain;
+}
+
+/* Styles for potential additional content (from your CSS but not in HTML yet) */
+.todayTtemsDetail {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 8px; /* Space between image and details */
+}
+
+.todayTtemsUp {
+    display: flex;
+    gap: 5px;
+    align-items: center; /* Align discount and deal text */
+    justify-content: center; /* Center this block */
+    margin-bottom: 4px;
+}
+
+.todayTtemsOff {
+    padding: 3px 6px;
+    background-color: #cc0c39;
+    font-size: 11px;
+    font-weight: 500;
+    color: white;
+    border-radius: 2px;
+}
+
+.todayStar { /* Assuming this is for "Deal of the Day" or similar text */
+    font-size: 11px;
+    font-weight: bold;
+    color: #cc0c39; /* Match discount color */
+}
+
+.todaydis { /* For displaying discounted price or product name */
+    font-size: 12px;
+    padding: 2px 0;
+    line-height: 1.3;
+}
+
+
+/* Responsive adjustments */
+
+/* Medium-Large screens / Small Desktops */
+@media (max-width: 1200px) {
+    .todaywrapper {
+        padding-top: 450px; /* Adjust wrapper padding */
+    }
+    .todayBanner {
+        width: 85%;
+    }
+    .todayDetailItems {
+        flex-basis: 22%; /* Approx 4-5 items */
+        min-width: 110px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .todaywrapper {
+        padding-top: 350px; /* Adjust wrapper padding */
+    }
+    .todayBanner {
+        width: 90%;
+        padding: 15px;
+    }
+    .todayTitle {
+        font-size: 20px;
+    }
+    .todayDetailItems {
+        flex-basis: 28%; /* Approx 3-4 items */
+        min-width: 100px;
+        padding: 8px;
+    }
+    .todayScroll {
+        gap: 10px;
+    }
+    .todayItemsImg {
+        width: 75%;
+    }
+}
+
+/* Small Tablets / Large Mobile Phones */
+@media (max-width: 768px) {
+    .todaywrapper {
+        padding-top: 250px; /* Significantly reduce or manage differently */
+        padding-bottom: 20px; /* Add some space at the bottom of the page */
+    }
+    .todayBanner {
+        width: 95%;
+        padding: 10px;
+    }
+    .todayTitle {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .todayDetailItems {
+        flex-basis: 35%; /* Approx 2-3 items */
+        min-width: 90px; /* Ensure items are usable */
+    }
+    .todayItemsImg {
+        width: 70%;
+    }
+    /* Adjust text for potential added details */
+    .todayTtemsOff, .todayStar {
+        font-size: 10px;
+    }
+    .todaydis {
+        font-size: 11px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 576px) {
+    .todaywrapper {
+        padding-top: 150px; /* Further reduction, highly dependent on content above */
+    }
+    .todayBanner {
+        width: 100%; /* Full width, margin already handles centering */
+        border-radius: 0; /* Full bleed on smallest screens */
+    }
+    .todayTitle {
+        font-size: 17px;
+        padding-left: 5px;
+    }
+    .todayScroll {
+        padding: 8px 2px; /* Less padding inside scroll */
+        gap: 8px;
+    }
+    .todayDetailItems {
+        flex-basis: 45%; /* Approx 2 items clearly visible */
+        min-width: 80px; /* Smallest practical size */
+        padding: 6px;
+    }
+    .todayItemsImg {
+        width: 65%; /* Adjust image size if needed */
+    }
+}

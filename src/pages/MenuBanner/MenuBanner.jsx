@@ -1,147 +1,57 @@
 import React from "react";
-import {Carousel} from 'react-responsive-carousel'
-import {img} from './data'
+import { Carousel } from "react-responsive-carousel";
+import { img } from "./data.js";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 
-import Headset from '../../assets/images/items/Headset.jpg'
-import Chair from '../../assets/images/items/Chair.jpg'
-import Keyboards from '../../assets/images/items/Keyboard.jpg'
-import Mouse from '../../assets/images/items/Mouse.jpg'
-
-
 import "./menuBanner.css";
-// import ProductDetails from "../ProductDetails/ProductDetails";
-
+import product from "../product.json";
 const MenuBanner = () => {
   return (
     <>
-        <Carousel className="homeBanner" autoPlay={true}
-        infiniteLoop = {true}
-        showIndicators = {false}
-        showThumbs = {false}>
-            
-{
-    img.map((imageItem) => {
-        return <img className="homeBannerImg" src={imageItem} />
-    })
-}
-        </Carousel>
+        <Carousel
+        className="homeBanner"
+        autoPlay={true}
+        infiniteLoop={true}
+        showIndicators={false}
+        showThumbs={false}
+        showStatus={false} 
+      >
+        {img.map((imageItem, index) => (
+          <div key={index} className="imageContainer">
+            <img className="homeBannerImg" src={imageItem} alt={`Slide ${index + 1}`} />
+            <div className="blurOverlay" />
+          </div>
+        ))}
+      </Carousel>
       {/* <div className="homeBannerImg"></div> */}
 
-       <div className="homeProduct">
-          <div className="itemCard">
-            <div className="itemCardTitle">Title</div>
-            <div className="itemImage">
-              <div className="imgList">
-                <img className="imgBanner" src={Headset} alt="" />
-                <div className="imageName">Headsets</div>
-              </div>
+      <div className="homeProduct">
+        {product.product.map((item, index) => {
+          return (
+            <div className="itemCard">
+              <div className="itemCardTitle">{item.itemTitle}</div>
+              <div className="itemImage">
+                {item.imgs.map((it, ind) => {
+                  return (
+                    <div className="imgList">
+                      <img className="imgBanner" src={it.url} alt="" />
+                      <div className="imageName">{it.productName}</div>
+                    </div>
+                  );
+                })}
 
-              <div className="imgList">
-                <img className="imgBanner" src={Keyboards} alt="" />
-                <div className="imageName">Keyboards</div>
+         
               </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Mouse} alt="" />
-                <div className="imageName">Computer mice</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Chair} alt="" />
-                <div className="imageName">Chairs</div>
-              </div>
+              <div className="seeMore">See More</div>
             </div>
-            <div className="seeMore">See More</div>
-          </div>
+          );
+        })}
 
-          <div className="itemCard">
-            <div className="itemCardTitle">Title</div>
-            <div className="itemImage">
-              <div className="imgList">
-                <img className="imgBanner" src={Headset} alt="" />
-                <div className="imageName">Headsets</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Keyboards} alt="" />
-                <div className="imageName">Keyboards</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Mouse} alt="" />
-                <div className="imageName">Computer mice</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Chair} alt="" />
-                <div className="imageName">Chairs</div>
-              </div>
-            </div>
-            <div className="seeMore">See More</div>
-          </div>
-
-          <div className="itemCard">
-            <div className="itemCardTitle">Title</div>
-            <div className="itemImage">
-              <div className="imgList">
-                <img className="imgBanner" src={Headset} alt="" />
-                <div className="imageName">Headsets</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Keyboards} alt="" />
-                <div className="imageName">Keyboards</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Mouse} alt="" />
-                <div className="imageName">Computer mice</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Chair} alt="" />
-                <div className="imageName">Chairs</div>
-              </div>
-            </div>
-            <div className="seeMore">See More</div>
-          </div>
-
-          <div className="itemCard">
-            <div className="itemCardTitle">Title</div>
-            <div className="itemImage">
-              <div className="imgList">
-                <img className="imgBanner" src={Headset} alt="" />
-                <div className="imageName">Headsets</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Keyboards} alt="" />
-                <div className="imageName">Keyboards</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Mouse} alt="" />
-                <div className="imageName">Computer mice</div>
-              </div>
-
-              <div className="imgList">
-                <img className="imgBanner" src={Chair} alt="" />
-                <div className="imageName">Chairs</div>
-              </div>
-            </div>
-            <div className="seeMore">See More</div>
-          </div>
-        </div>
-
+   
+      </div>
     </>
   );
 };
 
 export default MenuBanner;
-
-
-
-
-

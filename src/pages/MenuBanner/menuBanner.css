@@ -3,195 +3,281 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;  
-    /* background-color: #fff !important; */
+    width: 80%;
+    max-width: 1500px; 
+    position: relative;
 }
 
 .homeBannerImg {
-    z-index: -1;
-    margin-bottom: -10px;
+    z-index: -1; /* Keep banner image behind product cards */
+    margin-bottom: -80px; 
     width: 100%;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-    height: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 600px; 
+    object-fit: cover; 
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 90%); /* More pronounced fade at bottom */
 }
- /* .homeBanner {
-      position: relative;
- }
-.homeBanner::before {
-    content: '';
-    position: absolute;
-    bottom: 0px;
+
+/* Carousel specific styling to ensure images fill appropriately */
+.carousel .slide img.homeBannerImg {
     width: 100%;
-    height: 300px;
-    background-image: linear-gradient(
-        to bottom, 
-        rgba(225, 225,2 25,0),
-        rgba(255, 255, 255)
-    );
-} */
+    height: auto;
+    max-height: 600px; 
+    object-fit: cover;
+}
 
+/* Styling for carousel arrows */
+.carousel .control-arrow.control-prev,
+.carousel .control-arrow.control-next {
+    height: 320px; /* ~50% of max-height: 600px */
+    width: 70px; /* Fixed width for arrows */
+    opacity: 1; /* Always visible */
+    transition: opacity 0.3s ease; /* Smooth transition if hover is re-enabled */
+    z-index: 10; /* Ensure arrows are above the image */
+}
 
+/* Custom arrow styles */
+.carousel .control-arrow.control-prev::before,
+.carousel .control-arrow.control-next::before {
+    content: ''; /* Remove default chevron */
+    display: block;
+    width: 30px; /* Size of the arrow */
+    height: 30px; /* Size of the arrow */
+    border: 4px solid #fff; /* Thicker white border for visibility */
+    border-right: none; /* Create triangle shape */
+    border-bottom: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
+.carousel .control-arrow.control-prev::before {
+    transform: translateY(-50%) rotate(-45deg); /* Left arrow */
+    left: 20px;
+}
 
-
-
-
+.carousel .control-arrow.control-next::before {
+    transform: translateY(-50%) rotate(135deg); /* Right arrow */
+    right: 20px;
+}
 
 /* ---------------------------------------------- */
 .homeProduct {
     display: grid;
-    grid-template-columns: auto auto auto auto; /* Unchanged */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
-    top: 55%;
-    padding: 0 20px;
-    position: absolute;
-    width: 70%; /* Responsive width */
-    max-width: 1200px; /* Cap width for large screens */
-    left: 43%; /* Move left edge to center */
-    transform: translateX(-50%); /* Shift left by half the width */
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    position: relative; /* Respect document flow */
+    width: 80%; 
+    max-width: 1500px; 
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; 
+    box-sizing: border-box;
+    z-index: 10; 
+    margin-top: -80px; /* Align with banner's margin-bottom for full screen */
+    margin-bottom: 60px; /* Increased to ensure footer clearance */
+}
+
+/* Ensure container clears banner for proper layout */
+.homeBanner + .homeProduct {
+    margin-top: -200px; /* Reinforce alignment */
 }
 
 .itemCard {
     display: flex;
     background-color: white;
     flex-direction: column;
-    width: 343px;
+    width: 100%; 
     box-sizing: border-box;
-    padding: 20px 0 15px;
+    padding: 20px 15px 15px; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
 }
 
 .itemCardTitle {
-    margin: 0 20px;
-    font-size: 21px;
+    margin: 0 0 15px 0; 
+    font-size: 20px;
     font-weight: 700;
+    line-height: 1.25;
 }
 
 .itemImage {
-    margin: 10px 20px;
+    margin: 0 0 15px 0; 
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
 }
 
 .imgList {
-    height: 144px;
-    width: 144px;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
-.imgBanner{
+.imgBanner {
     width: 100%;
+    height: 120px; 
+    object-fit: cover; 
+    border-radius: 3px; 
+    margin-bottom: 5px; 
 }
 
 .imageName {
     font-size: 12px;
     font-weight: 500;
+    line-height: 1.3;
+    color: #333; 
 }
 
 .seeMore {
-    margin: 0 20px;
+    margin-top: auto; 
+    padding-top: 10px; 
     font-size: 13px;
     color: #007185;
-
+    cursor: pointer;
+    text-decoration: none; 
 }
 
+.seeMore:hover {
+    color: #C7511F; 
+    text-decoration: underline;
+}
 
 /* Responsive adjustments */
-@media (max-width: 1024px) {
-  .homeBanner {
-    width: 90%; /* Slightly wider on medium screens */
-  }
 
-  .homeProduct {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller min width for tablets */
-    padding: 15px;
-  }
-
-  .itemCard {
-    max-width: 300px; /* Slightly smaller cards */
-  }
-
-  .itemCardTitle {
-    font-size: 18px; /* Smaller title font */
-  }
+/* Large Desktops (full screen) */
+@media (min-width: 1501px) {
+    .homeProduct {
+        margin-top: -80px; /* Align with banner */
+        margin-bottom: 60px; /* Ensure space for footer */
+    }
 }
 
+/* Medium-Large screens / Small Desktops */
+@media (max-width: 1200px) {
+    .homeBanner {
+        width: 85%;
+    }
+    .homeBannerImg {
+        margin-bottom: -70px;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 90%); /* More pronounced fade at bottom */
+    }
+    .carousel .control-arrow.control-prev,
+    .carousel .control-arrow.control-next {
+        height: 220px; /* Adjusted for smaller banner */
+    }
+    .homeProduct {
+        grid-template-columns: repeat(3, 1fr); 
+        width: 85%;
+        max-width: 1100px;
+        margin-top: -70px; /* Align with banner's margin-bottom */
+        margin-bottom: 40px; 
+        padding: 0 15px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .homeBanner {
+        width: 90%;
+    }
+    .homeBannerImg {
+        margin-bottom: -60px;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 90%); /* More pronounced fade at bottom */
+    }
+    .carousel .control-arrow.control-prev,
+    .carousel .control-arrow.control-next {
+        height: 190px; 
+    }
+    .homeProduct {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        width: 90%;
+        margin-top: -60px; 
+        margin-bottom: 40px; 
+        gap: 15px;
+        padding: 0 10px;
+    }
+    .itemCardTitle {
+        font-size: 18px;
+    }
+    .imgBanner {
+        height: 110px; 
+    }
+}
+
+/* Small Tablets / Large Mobile Phones */
 @media (max-width: 768px) {
-  .homeBanner {
-    width: 95%; /* Almost full width on small screens */
-  }
-
-  .homeProduct {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Even smaller columns */
-    gap: 15px;
-    padding: 10px;
-  }
-
-  .itemCard {
-    padding: 15px 10px;
-  }
-
-  .itemImage {
-    grid-template-columns: repeat(2, 1fr); /* Two columns for images */
-    margin: 10px 15px;
-  }
-
-  .imgList {
-    max-width: 120px; /* Smaller images */
-  }
-
-  .imgBanner {
-    max-height: 100px; /* Smaller image height */
-  }
-
-  .itemCardTitle {
-    font-size: 16px;
-  }
-
-  .seeMore {
-    font-size: 12px;
-  }
+    .homeBanner {
+        width: 95%;
+    }
+    .homeBannerImg {
+        margin-bottom: -50px; 
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 90%); /* More pronounced fade at bottom */
+    }
+    .carousel .control-arrow.control-prev,
+    .carousel .control-arrow.control-next {
+        height: 160px; 
+    }
+    .homeProduct {
+        width: 90%; 
+        margin: -50px auto 40px auto; 
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+        gap: 15px;
+        padding: 10px; 
+        box-sizing: border-box;
+    }
+    .itemCard {
+        padding: 15px 10px;
+    }
+    .itemImage {
+        margin: 0 0 10px 0; 
+    }
+    .imgBanner {
+        height: 100px;
+    }
+    .itemCardTitle {
+        font-size: 17px;
+    }
+    .seeMore {
+        font-size: 12px;
+    }
 }
 
-@media (max-width: 480px) {
-  .homeBanner {
-    width: 100%; /* Full width on mobile */
-  }
-
-  .homeProduct {
-    grid-template-columns: 1fr; /* Single column on very small screens */
-    gap: 10px;
-    padding: 5px;
-  }
-
-  .itemCard {
-    max-width: 100%; /* Full width cards */
-    padding: 10px;
-  }
-
-  .itemImage {
-    grid-template-columns: 1fr 1fr; /* Two images per row */
-    margin: 5px 10px;
-  }
-
-  .imgList {
-    max-width: 100px; /* Smaller images */
-  }
-
-  .imgBanner {
-    max-height: 80px; /* Smaller images for mobile */
-  }
-
-  .itemCardTitle {
-    font-size: 14px;
-  }
-
-  .imageName {
-    font-size: 10px;
-  }
-
-  .seeMore {
-    font-size: 11px;
-  }
+/* Mobile Phones */
+@media (max-width: 576px) {
+    .homeBanner {
+        width: 100%; 
+    }
+    .homeBannerImg {
+        margin-bottom: -40px;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 90%); /* More pronounced fade at bottom */
+    }
+    .carousel .control-arrow.control-prev,
+    .carousel .control-arrow.control-next {
+        height: 140px; 
+    }
+    .homeProduct {
+        width: 95%; 
+        margin: -40px auto 40px auto; 
+        grid-template-columns: 1fr; 
+        gap: 10px;
+        padding: 5px;
+    }
+    .itemCard {
+        padding: 10px;
+    }
+    .itemImage {
+        margin: 0 0 8px 0;
+    }
+    .imgBanner {
+        height: 90px; 
+    }
+    .itemCardTitle {
+        font-size: 16px;
+    }
+    .imageName {
+        font-size: 11px;
+    }
+    .seeMore {
+        font-size: 11px;
+    }
 }
