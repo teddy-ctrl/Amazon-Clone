@@ -108,6 +108,83 @@
 }
 
 
+.todayItems {
+    display: flex;
+    align-items: center; /* Vertically align buttons and scroll area */
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; 
+    /* CRITICAL: This positions the absolute buttons relative to this container */
+    position: relative; 
+}
+
+.todayScroll {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    padding: 10px 5px;
+
+    /* CRITICAL: Keep it scrollable, but we will hide the scrollbar itself */
+    overflow-x: auto; 
+
+    /* Hide the scrollbar for different browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbar for Webkit-based browsers (Chrome, Safari, etc.) */
+.todayScroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- NEW STYLES for the navigation buttons --- */
+
+.scrollButton {
+    position: absolute; /* Position over the scroll area */
+    top: 50%;
+    transform: translateY(-50%); /* Perfectly center vertically */
+    z-index: 10; /* Ensure buttons are on top of the content */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 80px; /* Adjust size as needed */
+    width: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #333;
+    transition: all 0.2s ease-in-out;
+}
+
+.scrollButton:hover {
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.prevButton {
+    left: 0; /* Position on the left side */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.nextButton {
+    right: 0; /* Position on the right side */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Adjust button position slightly on smaller screens to not cover content too much */
+@media (max-width: 768px) {
+    .scrollButton {
+        height: 60px;
+        width: 35px;
+        font-size: 20px;
+    }
+}
+
 /* Responsive adjustments */
 
 /* Medium-Large screens / Small Desktops */

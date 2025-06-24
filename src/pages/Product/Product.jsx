@@ -61,6 +61,7 @@ const ProductCard = ({ product }) => {
         </div>
         <p className={classes.productShipping}>{product.shipping || "Shipping info unavailable"}</p>
         <p className={classes.productDelivery}>{product.delivery || "Delivery info unavailable"}</p>
+        <button>Add to Cart</button>
       </div>
     </div>
   );
@@ -112,15 +113,7 @@ const Product = () => {
               <li className={classes.starFilterItem}>
                 {renderStars(4)} <MdStarBorder className={classes.starIcon} /> & Up
               </li>
-              <li className={classes.starFilterItem}>
-                {renderStars(3)} <MdStarBorder className={classes.starIcon} /><MdStarBorder className={classes.starIcon} /> & Up
-              </li>
-              <li className={classes.starFilterItem}>
-                {renderStars(2)} <MdStarBorder className={classes.starIcon} /><MdStarBorder className={classes.starIcon} /><MdStarBorder className={classes.starIcon} /> & Up
-              </li>
-              <li className={classes.starFilterItem}>
-                {renderStars(1)} <MdStarBorder className={classes.starIcon} /><MdStarBorder className={classes.starIcon} /><MdStarBorder className={classes.starIcon} /><MdStarBorder className={classes.starIcon} /> & Up
-              </li>
+           
             </ul>
           </div>
           

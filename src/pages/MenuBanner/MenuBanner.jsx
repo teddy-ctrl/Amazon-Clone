@@ -2,8 +2,6 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import { img } from "./data.js";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-
-
 import "./menuBanner.css";
 import product from "../product.json";
 const MenuBanner = () => {
