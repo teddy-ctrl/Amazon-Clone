@@ -28,11 +28,7 @@
         {
             "itemTitle": "Appliances for your home | Up to 55% off",
             "imgs": [
-                {
-                    "url": "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg",
-                    "productName": "Air Conditioner",
-                    "category": "Appliances"
-                },
+               
                 {
                     "url": "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg",
                     "productName": "Refrigerator",
@@ -84,17 +80,17 @@
                     "category": "Electronics"
                 },
                 {
-                    "url": "https://images-na.ssl-images-amazon.com/images/I/51p41U24KkL._AC_UL160_SR160,160_.jpg",
+                    "url": "https://m.media-amazon.com/images/I/61GiuI-ebWL._AC_UY218_.jpg",
                     "productName": "Wireless Headphones",
                     "category": "Electronics"
                 },
                 {
-                    "url": "https://images-na.ssl-images-amazon.com/images/I/714c4gA+xwL._AC_UL160_SR160,160_.jpg",
+                    "url": "https://m.media-amazon.com/images/I/71kzInVwzgL._AC_UY218_.jpg",
                     "productName": "Portable Speaker",
                     "category": "Electronics"
                 },
                 {
-                    "url": "https://images-na.ssl-images-amazon.com/images/I/61m0joA5F1L._AC_UL160_SR160,160_.jpg",
+                    "url": "https://m.media-amazon.com/images/I/61AcT0ZuO3L._AC_UL320_.jpg",
                     "productName": "Gaming Mouse",
                     "category": "Computers & Accessories"
                 }
@@ -126,27 +122,12 @@
             ]
         },
         {
-            "itemTitle": "Find your next read | Bestselling books",
+            "itemTitle": "Get your game on",
             "imgs": [
                 {
-                    "url": "https://images-na.ssl-images-amazon.com/images/I/8144Vic9C5L._AC_UL160_SR160,160_.jpg",
-                    "productName": "Fiction Novel",
-                    "category": "Books"
-                },
-                {
-                    "url": "https://images-na.ssl-images-amazon.com/images/I/715qi-cIbML._AC_UL160_SR160,160_.jpg",
-                    "productName": "Self-Help Book",
-                    "category": "Books"
-                },
-                {
-                    "url": "https://images-na.ssl-images-amazon.com/images/I/81k1b662A4L._AC_UL160_SR160,160_.jpg",
-                    "productName": "Cookbook",
-                    "category": "Books"
-                },
-                {
-                    "url": "https://images-na.ssl-images-amazon.com/images/I/61-2aLS2dVL._AC_UL160_SR160,160_.jpg",
-                    "productName": "Kindle e-reader",
-                    "category": "Electronics"
+                    "url": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/Stores-Gaming/FinalGraphics/Fuji_Gaming_store_Dashboard_card_1x_EN._SY304_CB564799420_.jpg",
+                    "productName": "Fuji Gaming store Dashboard card",
+                    "category": "Computers & Accessories"
                 }
             ]
         },

@@ -9,13 +9,13 @@
 }
 
 .homeBannerImg {
-    z-index: -1; /* Keep banner image behind product cards */
+    z-index: -1; 
     margin-bottom: -80px; 
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto; 
     max-height: 600px; 
     object-fit: cover; 
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 90%); /* More pronounced fade at bottom */
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 90%); 
 }
 
 /* Carousel specific styling to ensure images fill appropriately */
@@ -29,22 +29,22 @@
 /* Styling for carousel arrows */
 .carousel .control-arrow.control-prev,
 .carousel .control-arrow.control-next {
-    height: 320px; /* ~50% of max-height: 600px */
-    width: 70px; /* Fixed width for arrows */
-    opacity: 1; /* Always visible */
-    transition: opacity 0.3s ease; /* Smooth transition if hover is re-enabled */
-    z-index: 10; /* Ensure arrows are above the image */
+    height: 320px; 
+    width: 70px; 
+    opacity: 1; 
+    transition: opacity 0.3s ease; 
+    z-index: 10; 
 }
 
 /* Custom arrow styles */
 .carousel .control-arrow.control-prev::before,
 .carousel .control-arrow.control-next::before {
-    content: ''; /* Remove default chevron */
+    content: ''; 
     display: block;
-    width: 30px; /* Size of the arrow */
-    height: 30px; /* Size of the arrow */
-    border: 4px solid #fff; /* Thicker white border for visibility */
-    border-right: none; /* Create triangle shape */
+    width: 30px; 
+    height: 30px; 
+    border: 4px solid #fff; 
+    border-right: none; 
     border-bottom: none;
     position: absolute;
     top: 50%;
@@ -52,34 +52,34 @@
 }
 
 .carousel .control-arrow.control-prev::before {
-    transform: translateY(-50%) rotate(-45deg); /* Left arrow */
+    transform: translateY(-50%) rotate(-45deg); 
     left: 20px;
 }
 
 .carousel .control-arrow.control-next::before {
-    transform: translateY(-50%) rotate(135deg); /* Right arrow */
+    transform: translateY(-50%) rotate(135deg); 
     right: 20px;
 }
 
-/* ---------------------------------------------- */
+/* ------------------Product---------------------------- */
 .homeProduct {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
-    position: relative; /* Respect document flow */
+    position: relative; 
     width: 80%; 
     max-width: 1500px; 
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto; 
     padding: 0 20px; 
     box-sizing: border-box;
     z-index: 10; 
-    margin-top: -80px; /* Align with banner's margin-bottom for full screen */
-    margin-bottom: 60px; /* Increased to ensure footer clearance */
+    margin-top: -80px; 
+    margin-bottom: 20px; 
 }
 
 /* Ensure container clears banner for proper layout */
 .homeBanner + .homeProduct {
-    margin-top: -200px; /* Reinforce alignment */
+    margin-top: -200px; 
 }
 
 .itemCard {
@@ -89,7 +89,6 @@
     width: 100%; 
     box-sizing: border-box;
     padding: 20px 15px 15px; 
-    border-radius: 5px; 
     box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
 }
 
@@ -105,19 +104,18 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     gap: 10px; 
+    cursor: pointer;
 }
 
 .imgList {
     display: flex;
     flex-direction: column;
-    text-align: center;
 }
 
 .imgBanner {
     width: 100%;
     height: 120px; 
     object-fit: cover; 
-    border-radius: 3px; 
     margin-bottom: 5px; 
 }
 
@@ -138,8 +136,7 @@
 }
 
 .seeMore:hover {
-    color: #C7511F; 
-    text-decoration: underline;
+    color: #03505e; 
 }
 
 /* Responsive adjustments */
@@ -148,7 +145,7 @@
 @media (min-width: 1501px) {
     .homeProduct {
         margin-top: -80px; /* Align with banner */
-        margin-bottom: 60px; /* Ensure space for footer */
+        margin-bottom: 20px; /* Ensure space for footer */
     }
 }
 
@@ -170,7 +167,7 @@
         width: 85%;
         max-width: 1100px;
         margin-top: -70px; /* Align with banner's margin-bottom */
-        margin-bottom: 40px; 
+        margin-bottom: 10px; 
         padding: 0 15px;
     }
 }
@@ -192,7 +189,7 @@
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         width: 90%;
         margin-top: -60px; 
-        margin-bottom: 40px; 
+        margin-bottom: 20px; 
         gap: 15px;
         padding: 0 10px;
     }
@@ -203,6 +200,71 @@
         height: 110px; 
     }
 }
+
+
+
+.itemImage {
+    margin: 0 0 15px 0;
+}
+
+/* 1. CLASS FOR THE DEFAULT 2x2 GRID (for 2, 3, or 4 images) */
+.itemImage--grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* 2. CLASS FOR THE SINGLE, FULL-WIDTH IMAGE LAYOUT */
+.itemImage--single {
+    display: block; 
+}
+
+/* Make the single image much larger */
+.itemImage--single .imgBanner {
+    height: 300px; 
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Hide the product name for the single image layout for a cleaner look */
+.itemImage--single .imageName {
+    display: none;
+}
+
+
+
+/* 3. CLASS FOR THE 3-IMAGE "FEATURED" LAYOUT (1 big, 2 small) */
+.itemImage--featured3 {
+    display: grid;
+    /* Two columns are still perfect for the two bottom images */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* Target the container of the first image in this layout */
+.itemImage--featured3 .imgList--featured {
+    /* Make the first item span across both columns */
+    grid-column: 1 / -1; 
+}
+
+/* Style the large featured image itself */
+.itemImage--featured3 .imgList--featured .imgBanner {
+    height: 125px; /* Make it slightly taller than the small ones */
+}
+
+/* Style the 2 smaller images */
+.itemImage--featured3 .imgList:not(.imgList--featured) .imgBanner {
+    height: 110px;
+}
+
+/* --- Original .imgBanner style (can be kept as a fallback) --- */
+.imgBanner {
+    width: 100%;
+    height: 120px; 
+    object-fit: contain; 
+    margin-bottom: 5px; 
+}
+
 
 /* Small Tablets / Large Mobile Phones */
 @media (max-width: 768px) {
@@ -219,7 +281,7 @@
     }
     .homeProduct {
         width: 90%; 
-        margin: -50px auto 40px auto; 
+        margin: -50px auto -10px auto; 
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
         gap: 15px;
         padding: 10px; 
@@ -249,7 +311,7 @@
     }
     .homeBannerImg {
         margin-bottom: -40px;
-        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 90%); /* More pronounced fade at bottom */
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 90%); 
     }
     .carousel .control-arrow.control-prev,
     .carousel .control-arrow.control-next {
@@ -257,7 +319,7 @@
     }
     .homeProduct {
         width: 95%; 
-        margin: -40px auto 40px auto; 
+        margin: -40px auto -10px auto; 
         grid-template-columns: 1fr; 
         gap: 10px;
         padding: 5px;

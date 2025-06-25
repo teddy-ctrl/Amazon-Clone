@@ -1,88 +1,82 @@
-/* Original Styles - with corrections and minor adjustments */
 .todaywrapper {
-      padding-top: 650px; /* Base for large screens */
-    background-color: #e6e6e6; /* Added a light background to see its extent if needed */
+    background-color: #e6e6e6; 
 }
 
 .todayBanner {
-    width: 77%; /* Base width */
-    max-width: 1500px; /* Cap the width on very large screens */
+    width: 77%; 
+    max-width: 1500px; 
     padding: 20px;
-    gap: 20px; /* This gap is for flex items *directly* inside .todayBanner, but it only has .todayCard */
-    display: flex; /* Not strictly necessary if it only contains .todayCard which is width 100% */
+    /* gap: 20px;  */
+    display: flex; 
     flex-direction: column;
     box-sizing: border-box;
     background-color: #FFFFFF;
-    margin: 0 auto; /* Center the banner */
-    border-radius: 4px; /* Optional: slight rounding */
+    margin: 0 auto; 
 }
 
 .todayCard {
     width: 100%;
     box-sizing: border-box;
-    /* padding: 15px;  Padding will be applied by .todayBanner, or add specific padding if needed */
 }
 
 .todayTitle {
     font-size: 21px;
     font-weight: 600;
-    margin-bottom: 15px; /* Add some space below the title */
-    padding-left: 10px; /* Align with items if they have padding */
+    margin-bottom: 15px; 
+    padding-left: 10px; 
 }
 
 .todayItems {
-    display: flex; /* This container is for the scrollable area */
+    display: flex;
     width: 100%;
     box-sizing: border-box;
-    overflow: hidden; /* Crucial: clips the .todayScroll to prevent its scrollbar from affecting layout outside */
+    overflow: hidden; 
 }
 
 .todayScroll {
     display: flex;
-    width: 100%; /* Take full width of .todayItems */
-    gap: 15px; /* Space between individual deal items */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    padding: 10px 5px; /* Add some padding for items, especially for scrollbar visibility */
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: #cccccc #f0f0f0; /* For Firefox */
+    /* gap: 15px;  */
+    overflow-x: auto;
+    padding: 10px 5px; 
+    scrollbar-width: thin; 
+    scrollbar-color: #cccccc #f0f0f0; 
 }
 
 
 
 .todayDetailItems {
     display: flex;
-    flex-shrink: 0; /* Prevent items from shrinking below their basis/width */
+    flex-shrink: 0; 
     flex-direction: column;
-    flex-basis: 17%; /* Use flex-basis for better control in flex container */
-    min-width: 120px; /* Ensure items don't get too small even with percentage basis */
+    flex-basis: 17%; 
+    min-width: 120px; 
     align-items: center;
-    justify-content: center; /* If you want content vertically centered */
+    justify-content: center; 
     box-sizing: border-box;
     padding: 10px;
-    border-radius: 3px; /* Optional */
-    text-align: center; /* For any text content added later */
+    border-radius: 3px; 
+    text-align: center; 
 }
 
 .todayItemsImg {
-    width: 80%; /* Increase size within the card */
-    max-width: 150px; /* Prevent image from becoming overly large if item card grows */
-    height: auto; /* Maintain aspect ratio */
+    width: 80%; 
+    max-width: 150px; 
+    height: auto; 
     object-fit: contain;
 }
 
-/* Styles for potential additional content (from your CSS but not in HTML yet) */
 .todayTtemsDetail {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 8px; /* Space between image and details */
+    margin-top: 8px; 
 }
 
 .todayTtemsUp {
     display: flex;
     gap: 5px;
-    align-items: center; /* Align discount and deal text */
-    justify-content: center; /* Center this block */
+    align-items: center; 
+    justify-content: center; 
     margin-bottom: 4px;
 }
 
@@ -95,13 +89,13 @@
     border-radius: 2px;
 }
 
-.todayStar { /* Assuming this is for "Deal of the Day" or similar text */
+.todayStar { 
     font-size: 11px;
     font-weight: bold;
-    color: #cc0c39; /* Match discount color */
+    color: #cc0c39; 
 }
 
-.todaydis { /* For displaying discounted price or product name */
+.todaydis { 
     font-size: 12px;
     padding: 2px 0;
     line-height: 1.3;
@@ -110,11 +104,10 @@
 
 .todayItems {
     display: flex;
-    align-items: center; /* Vertically align buttons and scroll area */
+    align-items: center; 
     width: 100%;
     box-sizing: border-box;
     overflow: hidden; 
-    /* CRITICAL: This positions the absolute buttons relative to this container */
     position: relative; 
 }
 
@@ -124,15 +117,12 @@
     gap: 15px;
     padding: 10px 5px;
 
-    /* CRITICAL: Keep it scrollable, but we will hide the scrollbar itself */
     overflow-x: auto; 
 
-    /* Hide the scrollbar for different browsers */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
 }
 
-/* Hide scrollbar for Webkit-based browsers (Chrome, Safari, etc.) */
 .todayScroll::-webkit-scrollbar {
     display: none;
 }
@@ -140,7 +130,7 @@
 /* --- NEW STYLES for the navigation buttons --- */
 
 .scrollButton {
-    position: absolute; /* Position over the scroll area */
+    position: absolute; 
     top: 50%;
     transform: translateY(-50%); /* Perfectly center vertically */
     z-index: 10; /* Ensure buttons are on top of the content */
@@ -148,7 +138,7 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    height: 80px; /* Adjust size as needed */
+    height: 120px; 
     width: 45px;
     cursor: pointer;
     display: flex;
@@ -176,6 +166,10 @@
     border-bottom-left-radius: 0;
 }
 
+.movieSection{
+    padding-top: 20px;
+}
+
 /* Adjust button position slightly on smaller screens to not cover content too much */
 @media (max-width: 768px) {
     .scrollButton {
@@ -190,7 +184,7 @@
 /* Medium-Large screens / Small Desktops */
 @media (max-width: 1200px) {
     .todaywrapper {
-        padding-top: 450px; /* Adjust wrapper padding */
+        padding-top: 20px; 
     }
     .todayBanner {
         width: 85%;
@@ -204,7 +198,7 @@
 /* Tablets */
 @media (max-width: 992px) {
     .todaywrapper {
-        padding-top: 350px; /* Adjust wrapper padding */
+        padding-top: 20px; 
     }
     .todayBanner {
         width: 90%;
@@ -214,7 +208,7 @@
         font-size: 20px;
     }
     .todayDetailItems {
-        flex-basis: 28%; /* Approx 3-4 items */
+        flex-basis: 28%;
         min-width: 100px;
         padding: 8px;
     }
@@ -229,8 +223,8 @@
 /* Small Tablets / Large Mobile Phones */
 @media (max-width: 768px) {
     .todaywrapper {
-        padding-top: 250px; /* Significantly reduce or manage differently */
-        padding-bottom: 20px; /* Add some space at the bottom of the page */
+        padding-top: 20px; 
+        padding-bottom: 20px; 
     }
     .todayBanner {
         width: 95%;
@@ -242,7 +236,7 @@
     }
     .todayDetailItems {
         flex-basis: 35%; /* Approx 2-3 items */
-        min-width: 90px; /* Ensure items are usable */
+        min-width: 90px;
     }
     .todayItemsImg {
         width: 70%;
@@ -259,26 +253,26 @@
 /* Mobile Phones */
 @media (max-width: 576px) {
     .todaywrapper {
-        padding-top: 150px; /* Further reduction, highly dependent on content above */
+        padding-top: 20px; 
     }
     .todayBanner {
-        width: 100%; /* Full width, margin already handles centering */
-        border-radius: 0; /* Full bleed on smallest screens */
+        width: 100%; 
+        border-radius: 0; 
     }
     .todayTitle {
         font-size: 17px;
         padding-left: 5px;
     }
     .todayScroll {
-        padding: 8px 2px; /* Less padding inside scroll */
+        padding: 8px 2px; 
         gap: 8px;
     }
     .todayDetailItems {
         flex-basis: 45%; /* Approx 2 items clearly visible */
-        min-width: 80px; /* Smallest practical size */
+        min-width: 80px; 
         padding: 6px;
     }
     .todayItemsImg {
-        width: 65%; /* Adjust image size if needed */
+        width: 65%; 
     }
 }
